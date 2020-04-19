@@ -23,4 +23,32 @@ public class CalculatorController {
         return "calculator";
     }
     
+    @RequestMapping("/advancedcalculator")
+    public String advancedcalculator(Model model, Integer x, Integer y, String operation){
+        Integer wynik=0;
+        String operator="operator";
+        if (operation == "add") 
+        {
+            wynik = x+y;
+            operator = "+";
+        }
+        else if (operation == "sub") 
+        {
+            wynik = x-y;
+            operator = "-";
+        }
+        else if (operation == "mul") 
+        {
+            wynik = x*y;
+            operator="*";
+        }
+        model.addAttribute("x", x);
+        model.addAttribute("y", y);
+        model.addAttribute("operator", operator);
+        model.addAttribute("wynik", wynik);
+        model.addAttribute("operation", operation);
+        return "advancedcalculator";
+            
+    }
+    
 }

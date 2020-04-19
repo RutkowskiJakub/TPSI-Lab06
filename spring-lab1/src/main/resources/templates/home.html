@@ -17,12 +17,26 @@
             <input type="submit" value="Wyślij" />
         </form>
         
-        
+        <br></br>
         
         <form action="/calculator" method="post">
             X: <input type="number" name="x" />
             Y: <input type="number" name="y" />
             <input type="submit" value="Dodaj" />
+        </form>
+        
+        <br></br>
+        
+        <form action="/advancedcalculator" method="post">
+            X: <input type="number" name="x" />
+            Y: <input type="number" name="y" />
+            <label for="operation"> Wybierz działanie: </label>
+            <select id="operation" name="operation">
+                <option value="add">Dodawanie</option>
+                <option value="sub">Odejmowanie</option>
+                <option value="mul">Mnozenie</option>
+            </select>
+            <input type="submit" value="Oblicz" />
         </form>
         
     </body>
