@@ -24,20 +24,20 @@ public class CalculatorController {
     }
     
     @RequestMapping("/advancedcalculator")
-    public String advancedcalculator(Model model, Integer x, Integer y, String operation){
+    public String advancedcalculator(Model model, Integer x, Integer y, Integer operation){
         Integer wynik=0;
         String operator="operator";
-        if (operation == "add") 
+        if (operation == 1) 
         {
             wynik = x+y;
             operator = "+";
         }
-        else if (operation == "sub") 
+        else if (operation == 2) 
         {
             wynik = x-y;
             operator = "-";
         }
-        else if (operation == "mul") 
+        else if (operation == 3) 
         {
             wynik = x*y;
             operator="*";
