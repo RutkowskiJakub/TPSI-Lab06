@@ -24,27 +24,27 @@ public class CalculatorController {
     }
     
     @RequestMapping("/advancedcalculator")
-    public String advancedcalculator(Model model, Integer x, Integer y, Integer operation){
+    public String advancedcalculator(Model model, Integer x, Integer y, String operation){
         Integer wynik=0;
-        String operator="operator";
-        if (operation == 1) 
+        //String operator="operator";
+        if (operation.equals("+")) 
         {
             wynik = x+y;
-            operator = "+";
+            //operator = "+";
         }
-        else if (operation == 2) 
+        else if (operation.equals("-")) 
         {
             wynik = x-y;
-            operator = "-";
+            //operator = "-";
         }
-        else if (operation == 3) 
+        else if (operation.equals("*")) 
         {
             wynik = x*y;
-            operator="*";
+            //operator="*";
         }
         model.addAttribute("x", x);
         model.addAttribute("y", y);
-        model.addAttribute("operator", operator);
+        //model.addAttribute("operator", operator);
         model.addAttribute("wynik", wynik);
         model.addAttribute("operation", operation);
         return "advancedcalculator";
