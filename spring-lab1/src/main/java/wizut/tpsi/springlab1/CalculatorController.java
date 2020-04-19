@@ -51,4 +51,27 @@ public class CalculatorController {
             
     }
     
+    @RequestMapping("/dodajDzialanie")
+    public String dodajDzialanie(Model model, CalculatorForm dzialanie){
+        Integer wynik=0;
+        if((dzialanie.getOperator()).equals("+"))
+        {
+            wynik = dzialanie.getX() + dzialanie.getY();
+        }
+        else if((dzialanie.getOperator()).equals("-"))
+        {
+            wynik = dzialanie.getX() - dzialanie.getY();
+        }
+        else if((dzialanie.getOperator()).equals("*"))
+        {
+            wynik = dzialanie.getX() * dzialanie.getY();
+        }
+        
+        model.addAttribute("dzialanie", dzialanie);
+        model.addAttribute("wynik", wynik);
+        
+        
+        return "dzialanie";
+    }
+    
 }
