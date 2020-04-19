@@ -24,4 +24,10 @@ public class HomeController {
         return "hello";
     }
     
+    @RequestMapping("/dodajOsobe")
+    public String dodajOsobe(Model model, OsobaForm osoba){
+        model.addAttribute("osoba", osoba);
+        return "osobaform";
+    }
+    
 }
